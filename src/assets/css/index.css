@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype-variations');
+  font-weight: 100 900; 
+  font-style: normal;
+  font-display: swap; 
+}
+
+
+
+:root{
+    /* colours */
+  --green: #c5f82a;
+  --gray-700: #333333;
+  --gray-800: #1f1f1f;
+  --gray-900: #141414;
+
+    /* spacing */
+  --sizing-4: 0.25rem;
+  --sizing-8: 0.5rem;
+  --sizing-12: 0.75rem;
+  --sizing-14: 0.875rem;
+  --sizing-16: 1rem;
+  --sizing-20: 1.25rem;
+  --sizing-24: 1.5rem;
+  --sizing-32: 2rem;
+}
+
+
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body{
+  height: 100vh;
+  display: flex;
+  color: white;
+  line-height: 140%;
+  align-items: center;
+  letter-spacing: 0.2px;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--gray-900); 
+}
+
+
+
+.card{
+  width: 380px;
+  text-align: center;
+  border-radius: var(--sizing-16);
+  background-color: var(--gray-800);
+  padding: clamp(
+    var(--sizing-24),
+    var(--sizing-24) + 0.08vw,
+    var(--sizing-32));
+
+
+  .card-img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin: var(--sizing-24);
+  }
+
+  .card-title{
+    font-weight: 400;
+    font-size: var(--sizing-24);
+  }
+
+  .card-location{
+    font-weight: 600;
+    color: var(--green);
+    margin: var(--sizing-12) 0;
+    text-transform: capitalize;
+    font-size: var(--sizing-14);
+  }
+  
+  .card-text{
+    margin: var(--sizing-24) 0;
+    font-size: var(--sizing-14);
+  }
+
+  .card-link-group{
+    display: flex;
+    gap: var(--sizing-16);
+    list-style-type: none;
+    flex-direction: column;
+    
+    .card-link{
+      cursor: pointer;
+      font-weight: 600;
+      text-transform: capitalize;
+      border-radius: var(--sizing-8);
+      background-color: var(--gray-700);
+      padding: var(--sizing-14) var(--sizing-20);
+    }
+
+    .card-link:hover{
+      color: var(--gray-900);
+      background-color: var(--green);
+    }
+  }
+}

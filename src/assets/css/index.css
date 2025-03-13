@@ -57,10 +57,7 @@ body{
   text-align: center;
   border-radius: var(--sizing-16);
   background-color: var(--gray-800);
-  padding: clamp(
-    var(--sizing-24),
-    var(--sizing-24) + 0.08vw,
-    var(--sizing-32));
+  padding:var(--sizing-32);
 
 
   .card-img{
@@ -71,7 +68,7 @@ body{
   }
 
   .card-title{
-    font-weight: 400;
+    font-weight: 700;
     font-size: var(--sizing-24);
   }
 

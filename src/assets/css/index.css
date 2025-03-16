@@ -24,6 +24,7 @@
   --sizing-20: 1.25rem;
   --sizing-24: 1.5rem;
   --sizing-32: 2rem;
+  --sizing-40: 2.5rem;
 }
 
 
@@ -50,6 +51,9 @@ body{
   background-color: var(--gray-900); 
 }
 
+:focus {
+  outline: none; /* Removes the default outline */
+}
 
 
 .card{
@@ -57,7 +61,10 @@ body{
   text-align: center;
   border-radius: var(--sizing-16);
   background-color: var(--gray-800);
-  padding:var(--sizing-32);
+  padding: clamp(
+    var(--sizing-24),
+    calc(var(--sizing-24) + 1vw),
+    var(--sizing-40));
 
 
   .card-img{
@@ -85,6 +92,7 @@ body{
     font-size: var(--sizing-14);
   }
 
+
   .card-link-group{
     display: flex;
     gap: var(--sizing-16);
@@ -92,17 +100,26 @@ body{
     flex-direction: column;
     
     .card-link{
+      color: white;
+      display: block;  
       cursor: pointer;
       font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
       text-transform: capitalize;
       border-radius: var(--sizing-8);
       background-color: var(--gray-700);
       padding: var(--sizing-14) var(--sizing-20);
     }
-
-    .card-link:hover{
-      color: var(--gray-900);
-      background-color: var(--green);
-    }
+  } 
+  
+  .card-link-group:hover .card-link:focus,
+  .card-link-group:not(.disable-hover) .card-link:hover{
+    color: var(--gray-900);
+    background-color: var(--green);
+  }
+  .card-link-group:hover.disable-hover,
+  .card-link-group.disable-hover .card-link:hover{
+    cursor: none;
   }
 }
